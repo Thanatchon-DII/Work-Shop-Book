@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 (function() {
 	'use strict';
 
@@ -72,7 +72,7 @@
 
 
 })()
-=======
+
 document.addEventListener('DOMContentLoaded', function() {
     const books = [
         // Fiction Books (ยังคงเป็นข้อมูลเดิม)
@@ -191,4 +191,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial load: display all books
     displayBooks('all');
 });
->>>>>>> Stashed changes
