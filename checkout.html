@@ -42,7 +42,10 @@
 							<a class="nav-link" href="index.html">Home</a>
 						</li>
 						<li><a class="nav-link" href="shop.html">Shop</a></li>
+						<li><a class="nav-link" href="about.html">About us</a></li>
+						<li><a class="nav-link" href="services.html">Services</a></li>
 						<li><a class="nav-link" href="blog.html">Blog</a></li>
+						<li><a class="nav-link" href="contact.html">Contact us</a></li>
 					</ul>
 
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
@@ -271,18 +274,30 @@
 		            <div class="col-md-12">
 		              <h2 class="h3 mb-3 text-black">Your Order</h2>
 		              <div class="p-3 p-lg-5 border bg-white">
-		                <table id="order-table" class="table site-block-order-table mb-5">	
- 						 <thead>
-						<tr>
-						<th>Product</th>
-						<th>Total</th>
-						</tr>
-						</thead>
-						<tbody>
-							<!-- JS จะเติม <tr> ลงที่นี่ -->
-						</tbody>
-						</table>
-
+		                <table class="table site-block-order-table mb-5">
+		                  <thead>
+		                    <th>Product</th>
+		                    <th>Total</th>
+		                  </thead>
+		                  <tbody>
+		                    <tr>
+		                      <td>Top Up T-Shirt <strong class="mx-2">x</strong> 1</td>
+		                      <td>$250.00</td>
+		                    </tr>
+		                    <tr>
+		                      <td>Polo Shirt <strong class="mx-2">x</strong>   1</td>
+		                      <td>$100.00</td>
+		                    </tr>
+		                    <tr>
+		                      <td class="text-black font-weight-bold"><strong>Cart Subtotal</strong></td>
+		                      <td class="text-black">$350.00</td>
+		                    </tr>
+		                    <tr>
+		                      <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
+		                      <td class="text-black font-weight-bold"><strong>$350.00</strong></td>
+		                    </tr>
+		                  </tbody>
+		                </table>
 
 		                <div class="border p-3 mb-3">
 		                  <h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse" href="#collapsebank" role="button" aria-expanded="false" aria-controls="collapsebank">Direct Bank Transfer</a></h3>
@@ -437,44 +452,6 @@
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/tiny-slider.js"></script>
 		<script src="js/custom.js"></script>
-		<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // ดึง cart จาก localStorage
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    // อ้างอิง <tbody> ในตาราง order-table
-    const tbody = document.querySelector('#order-table tbody');
-    tbody.innerHTML = ''; 
-    let grandTotal = 0;
-
-    // สร้างแถวสินค้าแต่ละตัว
-    cart.forEach(item => {
-      const subtotal = item.price * item.quantity;
-      grandTotal += subtotal;
-      tbody.innerHTML += `
-        <tr>
-          <td>${item.name} &times; ${item.quantity}</td>
-          <td>$${subtotal.toFixed(2)}</td>
-        </tr>
-      `;
-    });
-
-    // แถวสรุป Cart Subtotal
-    tbody.innerHTML += `
-      <tr>
-        <td>Cart Subtotal</td>
-        <td>$${grandTotal.toFixed(2)}</td>
-      </tr>
-    `;
-
-    // แถวสรุป Order Total (ตัวหนา)
-    tbody.innerHTML += `
-      <tr>
-        <td><strong>Order Total</strong></td>
-        <td><strong>$${grandTotal.toFixed(2)}</strong></td>
-      </tr>
-    `;
-  });
-</script>
 	</body>
 
 </html>
