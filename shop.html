@@ -16,29 +16,9 @@
 	<title>Furni Shop - Enhanced with Category & Search</title>
 
 	<style>
-		/* Custom styles */
+		/* Custom styles - keeping original navbar styling */
 		.custom-navbar {
-			background-color: #3b5d50 !important;
-			padding: 1rem 0;
-		}
-
-		.navbar-brand {
-			font-weight: 700;
-			font-size: 2rem;
-			color: #fff !important;
-		}
-
-		.navbar-brand span {
-			color: #f9bf29;
-		}
-
-		.nav-link {
-			color: #fff !important;
-			font-weight: 500;
-		}
-
-		.nav-link:hover {
-			color: #f9bf29 !important;
+			background-color: #343a40 !important;
 		}
 
 		.hero {
@@ -198,7 +178,8 @@
 <body>
 
 	<!-- Start Header/Navigation -->
-	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark">
+	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+
 		<div class="container">
 			<a class="navbar-brand" href="index.html">Furni<span>.</span></a>
 
@@ -209,19 +190,21 @@
 
 			<div class="collapse navbar-collapse" id="navbarsFurni">
 				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-					<li class="nav-item">
+					<li class="nav-item active">
 						<a class="nav-link" href="index.html">Home</a>
 					</li>
 					<li><a class="nav-link" href="blog.html">Blog</a></li>
-					<li class="nav-item active"><a class="nav-link" href="shop.html">Shop</a></li>
+					<li><a class="nav-link" href="shop.html">Shop</a></li>
+
 				</ul>
 
 				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-					<li><a class="nav-link" href="#"><i class="fas fa-user"></i></a></li>
-					<li><a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+					<li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
+					<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
 				</ul>
 			</div>
 		</div>
+
 	</nav>
 	<!-- End Header/Navigation -->
 
