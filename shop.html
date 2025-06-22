@@ -1,10 +1,3 @@
-<!-- /*
-* Bootstrap 5
-* Template Name: Furni
-* Template Author: Untree.co
-* Template URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
 <!doctype html>
 <html lang="en">
 
@@ -18,11 +11,175 @@
 	<meta name="keywords" content="bootstrap, bootstrap4" />
 
 	<!-- Bootstrap CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-	<link href="css/tiny-slider.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<title>Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites by Untree.co </title>
+	<!-- <title>Furni Shop - Enhanced with Category & Search</title> -->
+	<title>Book Store </title>
+
+	<style>
+		/* Custom styles - keeping original navbar styling */
+		.custom-navbar {
+			background-color: #343a40 !important;
+		}
+
+		.hero {
+			background: linear-gradient(90deg, #3b5d50 0%, #2f4a3d 100%);
+			padding: 5rem 0 3rem;
+		}
+
+		.intro-excerpt h1 {
+			color: #fff;
+			font-size: 3rem;
+			font-weight: 700;
+		}
+
+		.filter-search-section {
+			background-color: #f8f9fa;
+			padding: 2rem 0;
+			border-bottom: 1px solid #dee2e6;
+		}
+
+		.search-box {
+			border: 2px solid #3b5d50;
+			border-radius: 25px;
+			padding: 0.75rem 1.5rem;
+		}
+
+		.search-box:focus {
+			box-shadow: 0 0 0 0.2rem rgba(59, 93, 80, 0.25);
+			border-color: #3b5d50;
+		}
+
+		.category-btn {
+			border: 2px solid #3b5d50;
+			color: #3b5d50;
+			background: transparent;
+			border-radius: 25px;
+			padding: 0.5rem 1.5rem;
+			margin: 0.25rem;
+			transition: all 0.3s ease;
+		}
+
+		.category-btn:hover,
+		.category-btn.active {
+			background-color: #3b5d50;
+			color: white;
+		}
+
+		.product-item {
+			text-decoration: none;
+			color: inherit;
+			display: block;
+			position: relative;
+			background: #fff;
+			border-radius: 15px;
+			overflow: hidden;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+			transition: all 0.3s ease;
+			margin-bottom: 2rem;
+		}
+
+		.product-item:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+			color: inherit;
+			text-decoration: none;
+		}
+
+		.product-thumbnail {
+			width: 100%;
+			height: 250px;
+			object-fit: cover;
+		}
+
+		.product-info {
+			padding: 1.5rem;
+		}
+
+		.product-title {
+			font-size: 1.25rem;
+			font-weight: 600;
+			margin-bottom: 0.5rem;
+			color: #333;
+		}
+
+		.product-price {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: #3b5d50;
+		}
+
+		.product-description {
+			color: #666;
+			font-size: 0.9rem;
+			margin-bottom: 1rem;
+		}
+
+		.product-category {
+			background-color: #f9bf29;
+			color: #333;
+			padding: 0.25rem 0.75rem;
+			border-radius: 15px;
+			font-size: 0.8rem;
+			font-weight: 500;
+			display: inline-block;
+			margin-bottom: 0.5rem;
+		}
+
+		.icon-cross {
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			background: #3b5d50;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			opacity: 0;
+		}
+
+		.product-item:hover .icon-cross {
+			opacity: 1;
+		}
+
+		.icon-cross:hover {
+			background: #f9bf29;
+			transform: scale(1.1);
+		}
+
+		.icon-cross i {
+			color: white;
+			font-size: 18px;
+		}
+
+		.no-products {
+			text-align: center;
+			padding: 3rem 0;
+			color: #666;
+		}
+
+		.results-count {
+			color: #666;
+			margin-bottom: 1rem;
+		}
+
+		.footer-section {
+			background-color: #3b5d50;
+			color: white;
+			padding: 3rem 0 1rem;
+			margin-top: 3rem;
+		}
+	</style>
+
+
+	<meta name="description" content="" />
+	<meta name="keywords" content="bootstrap, bootstrap4" />
+
+	<link href="css/StyleShop.css" rel="stylesheet">
 </head>
 
 <body>
@@ -31,7 +188,7 @@
 	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
 		<div class="container">
-			<a class="navbar-brand" href="index.html">Furni<span>.</span></a>
+			<a class="navbar-brand" href="index.html">Book Store<span>.</span></a>
 
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
 				aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,296 +221,309 @@
 				<div class="col-lg-5">
 					<div class="intro-excerpt">
 						<h1>Shop</h1>
+						<p class="text-white-50">Discover our premium books collection</p>
 					</div>
-				</div>
-				<div class="col-lg-7">
-
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- End Hero Section -->
 
-
-
-
-
-	<div class="untree_co-section product-section before-footer-section">
+	<!-- Filter and Search Section -->
+	<div class="filter-search-section">
 		<div class="container">
-			<div class="row">
-
-				<!-- Start Column 1 -->
-				<div class="col-12 col-md-4 col-lg-3 mb-5">
-					<a class="product-item" href="#">
-						<img src="images/product-3.png" class="img-fluid product-thumbnail">
-						<h3 class="product-title">Nordic Chair</h3>
-						<strong class="product-price">$50.00</strong>
-
-						<span class="icon-cross">
-							<img src="images/cross.svg" class="img-fluid">
-						</span>
-					</a>
+			<div class="row align-items-center">
+				<div class="col-md-6 mb-3 mb-md-0">
+					<div class="search-container">
+						<input type="text" id="searchInput" class="form-control search-box"
+							placeholder="Search products by name or description...">
+					</div>
 				</div>
-				<!-- End Column 1 -->
-
-				<!-- Start Column 2 -->
-				<div class="col-12 col-md-4 col-lg-3 mb-5">
-					<a class="product-item" href="#">
-						<img src="images/product-1.png" class="img-fluid product-thumbnail">
-						<h3 class="product-title">Nordic Chair</h3>
-						<strong class="product-price">$50.00</strong>
-
-						<span class="icon-cross">
-							<img src="images/cross.svg" class="img-fluid">
-						</span>
-					</a>
+				<div class="col-md-6">
+					<div class="category-filters">
+						<button class="btn category-btn active" data-category="all">All Products</button>
+						<button class="btn category-btn" data-category="historical">Historical</button>
+						<button class="btn category-btn" data-category="sci-fi">Sci-fi</button>
+						<button class="btn category-btn" data-category="fiction">Fiction</button>
+						<button class="btn category-btn" data-category="thriller">Thriller</button>
+					</div>
 				</div>
-				<!-- End Column 2 -->
-
-				<!-- Start Column 3 -->
-				<div class="col-12 col-md-4 col-lg-3 mb-5">
-					<a class="product-item" href="#">
-						<img src="images/product-2.png" class="img-fluid product-thumbnail">
-						<h3 class="product-title">Kruzo Aero Chair</h3>
-						<strong class="product-price">$78.00</strong>
-
-						<span class="icon-cross">
-							<img src="images/cross.svg" class="img-fluid">
-						</span>
-					</a>
-				</div>
-				<!-- End Column 3 -->
-
-				<!-- Start Column 4 -->
-				<div class="col-12 col-md-4 col-lg-3 mb-5">
-					<a class="product-item" href="#">
-						<img src="images/product-3.png" class="img-fluid product-thumbnail">
-						<h3 class="product-title">Ergonomic Chair</h3>
-						<strong class="product-price">$43.00</strong>
-
-						<span class="icon-cross">
-							<img src="images/cross.svg" class="img-fluid">
-						</span>
-					</a>
-				</div>
-				<!-- End Column 4 -->
-
-
-				<!-- Start Column 1 -->
-				<div class="col-12 col-md-4 col-lg-3 mb-5">
-					<a class="product-item" href="#">
-						<img src="images/product-3.png" class="img-fluid product-thumbnail">
-						<h3 class="product-title">Nordic Chair</h3>
-						<strong class="product-price">$50.00</strong>
-
-						<span class="icon-cross">
-							<img src="images/cross.svg" class="img-fluid">
-						</span>
-					</a>
-				</div>
-				<!-- End Column 1 -->
-
-				<!-- Start Column 2 -->
-				<div class="col-12 col-md-4 col-lg-3 mb-5">
-					<a class="product-item" href="#">
-						<img src="images/product-1.png" class="img-fluid product-thumbnail">
-						<h3 class="product-title">Nordic Chair</h3>
-						<strong class="product-price">$50.00</strong>
-
-						<span class="icon-cross">
-							<img src="images/cross.svg" class="img-fluid">
-						</span>
-					</a>
-				</div>
-				<!-- End Column 2 -->
-
-				<!-- Start Column 3 -->
-				<div class="col-12 col-md-4 col-lg-3 mb-5">
-					<a class="product-item" href="#">
-						<img src="images/product-2.png" class="img-fluid product-thumbnail">
-						<h3 class="product-title">Kruzo Aero Chair</h3>
-						<strong class="product-price">$78.00</strong>
-
-						<span class="icon-cross">
-							<img src="images/cross.svg" class="img-fluid">
-						</span>
-					</a>
-				</div>
-				<!-- End Column 3 -->
-
-				<!-- Start Column 4 -->
-				<div class="col-12 col-md-4 col-lg-3 mb-5">
-					<a class="product-item" href="#">
-						<img src="images/product-3.png" class="img-fluid product-thumbnail">
-						<h3 class="product-title">Ergonomic Chair</h3>
-						<strong class="product-price">$43.00</strong>
-
-						<span class="icon-cross">
-							<img src="images/cross.svg" class="img-fluid">
-						</span>
-					</a>
-				</div>
-				<!-- End Column 4 -->
-
 			</div>
 		</div>
 	</div>
 
+	<!-- Products Section -->
+	<div class="untree_co-section product-section before-footer-section">
+		<div class="container">
+			<div class="results-count" id="resultsCount"></div>
+			<div class="row" id="productsContainer">
+				<!-- Products will be dynamically loaded here -->
+			</div>
+			<div class="no-products" id="noProducts" style="display: none;">
+				<i class="fas fa-search fa-3x mb-3 text-muted"></i>
+				<h4>No products found</h4>
+				<p>Try adjusting your search or filter criteria</p>
+			</div>
+		</div>
+	</div>
 
 	<!-- Start Footer Section -->
 	<footer class="footer-section">
-		<div class="container relative">
-
-			<div class="sofa-img">
-				<img src="images/sofa.png" alt="Image" class="img-fluid">
-			</div>
-
+		<div class="container">
 			<div class="row">
-				<div class="col-lg-8">
-					<div class="subscription-form">
-						<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg"
-									alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
-
-						<form action="#" class="row g-3">
-							<div class="col-auto">
-								<input type="text" class="form-control" placeholder="Enter your name">
-							</div>
-							<div class="col-auto">
-								<input type="email" class="form-control" placeholder="Enter your email">
-							</div>
-							<div class="col-auto">
-								<button class="btn btn-primary">
-									<span class="fa fa-paper-plane"></span>
-								</button>
-							</div>
-						</form>
-
-					</div>
-				</div>
-			</div>
-
-			<div class="row g-5 mb-5">
 				<div class="col-lg-4">
-					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Furni<span>.</span></a></div>
-					<p class="mb-4">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus
-						malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
-						Pellentesque habitant</p>
-
-					<ul class="list-unstyled custom-social">
-						<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-						<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-						<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-						<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
-					</ul>
+					<div class="mb-4">
+						<a href="#" class="navbar-brand">Book Store<span>.</span></a>
+					</div>
+					<p class="mb-4">Premium furniture for modern living spaces. Quality craftsmanship meets contemporary
+						design.</p>
 				</div>
-
 				<div class="col-lg-8">
-					<div class="row links-wrap">
-						<div class="col-6 col-sm-6 col-md-3">
+					<div class="row">
+						<div class="col-6 col-md-3">
+							<h6>Company</h6>
 							<ul class="list-unstyled">
-								<li><a href="#">About us</a></li>
-								<li><a href="#">Services</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Contact us</a></li>
+								<li><a href="#" class="text-white-50">About us</a></li>
+								<li><a href="#" class="text-white-50">Services</a></li>
+								<li><a href="#" class="text-white-50">Contact</a></li>
 							</ul>
 						</div>
-
-						<div class="col-6 col-sm-6 col-md-3">
+						<div class="col-6 col-md-3">
+							<h6>Support</h6>
 							<ul class="list-unstyled">
-								<li><a href="#">Support</a></li>
-								<li><a href="#">Knowledge base</a></li>
-								<li><a href="#">Live chat</a></li>
-							</ul>
-						</div>
-
-						<div class="col-6 col-sm-6 col-md-3">
-							<ul class="list-unstyled">
-								<li><a href="#">Jobs</a></li>
-								<li><a href="#">Our team</a></li>
-								<li><a href="#">Leadership</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-							</ul>
-						</div>
-
-						<div class="col-6 col-sm-6 col-md-3">
-							<ul class="list-unstyled">
-								<li><a href="#">Nordic Chair</a></li>
-								<li><a href="#">Kruzo Aero</a></li>
-								<li><a href="#">Ergonomic Chair</a></li>
+								<li><a href="#" class="text-white-50">Help Center</a></li>
+								<li><a href="#" class="text-white-50">Live Chat</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-
 			</div>
-
-			<div class="border-top copyright">
-				<div class="row pt-4">
-					<div class="col-lg-6">
-						<p class="mb-2 text-center text-lg-start">Copyright &copy;
-							<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash;
-							Designed with love by <a href="https://untree.co">Untree.co</a> Distributed By <a
-								href="https://themewagon.com">ThemeWagon</a>
-							<!-- License information: https://untree.co/license/ -->
-						</p>
-					</div>
-
-					<div class="col-lg-6 text-center text-lg-end">
-						<ul class="list-unstyled d-inline-flex ms-auto">
-							<li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-						</ul>
-					</div>
-
-				</div>
+			<hr class="my-4">
+			<div class="text-center">
+				<p class="mb-0 text-white-50">&copy; 2025 Book Store. All rights reserved.</p>
 			</div>
-
 		</div>
 	</footer>
-	<!-- End Footer Section -->
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/tiny-slider.js"></script>
-	<script src="js/custom.js"></script>
-
-
-	<!-- วางโค้ดนี้ก่อน </body> ใน shop.html -->
 	<script>
-		// ฟังก์ชันเพิ่มสินค้าเข้า cart
+		// Sample product data with categories and descriptions
+		const products = [
+			{
+				id: 1,
+				name: "All the Light We Cannot See",
+				price: 50.00,
+				image: "images/BookX/Book111.jpg",
+				category: "historical",
+				description: "WWII: A blind French girl and German orphan find hope. Beautiful, poignant."
+			},
+			{
+				id: 2,
+				name: "Normal People",
+				price: 78.00,
+				image: "images/BookX/Book5.jpg",
+				category: "fiction",
+				description: "Raw, intimate story of Marianne and Connell's complex on-off relationship. Relatable, affecting."
+			},
+			{
+				id: 3,
+				name: "Dune",
+				price: 43.00,
+				image: "images/BookX/Book6.jpg",
+				category: "sci-fi",
+				description: "Epic sci-fi on a desert planet. Paul Atreides navigates politics, prophecy, and war. Visionary."
+			},
+			{
+				id: 4,
+				name: "War and Peace",
+				price: 125.00,
+				image: "images/BookX/Book14.jpg",
+				category: "historical",
+				description: "Sweeping classic of five Russian families during Napoleonic Wars. Profound, vast."
+			},
+			{
+				id: 5,
+				name: "The Great Gatsby",
+				price: 299.00,
+				image: "images/BookX/Book11.jpg",
+				category: "fiction",
+				description: "1920s: Wealthy Gatsby obsesses over Daisy. Tragic American Dream. Iconic."
+			},
+			{
+				id: 6,
+				name: "The Nightingale",
+				price: 89.00,
+				image: "images/BookX/Book15.jpg",
+				category: "historical",
+				description: "WWII: Two French sisters show courage and sacrifice under Nazi rule. Powerful."
+			},
+			{
+				id: 7,
+				name: "The Martian",
+				price: 155.00,
+				image: "images/BookX/Book9.jpg",
+				category: "sci-fi",
+				description: "Astronaut stranded on Mars must survive using science. Thrilling, ingenious."
+			},
+			{
+				id: 8,
+				name: "Snow Crash",
+				price: 699.00,
+				image: "images/BookX/Book10.jpg",
+				category: "sci-fi",
+				description: "Cyberpunk: Hacker in virtual Metaverse battles a mind virus. Wild, visionary."
+			},
+			{
+				id: 9,
+				name: "Before I Go to Sleep",
+				price: 899.00,
+				image: "images/BookX/Book20.jpg",
+				category: "thriller",
+				description: "Amnesiac woman uncovers disturbing truths about her past via a secret journal. Gripping."
+			},
+			{
+				id: 10,
+				name: "Gone Girl",
+				price: 189.00,
+				image: "images/BookX/Book16.jpg",
+				category: "thriller",
+				description: "When Amy disappears, her husband is suspect. Dark, twisted thriller of a marriage. Chilling."
+			},
+			{
+				id: 11,
+				name: "The Catcher in the Rye",
+				price: 129.00,
+				image: "images/BookX/Book3.jpg",
+				category: "fiction",
+				description: "Teenager Holden Caulfield navigates NYC after expulsion. Classic adolescent angst."
+			},
+			{
+				id: 12,
+				name: "To Kill a Mockingbird",
+				price: 99.00,
+				image: "images/BookX/Book2.jpg",
+				category: "fiction",
+				description: "Southern classic: Young Scout sees racial injustice as her father defends an innocent man. Timeless."
+			}
+		];
+
+		let filteredProducts = [...products];
+		let currentCategory = 'all';
+		let currentSearch = '';
+
+		// Initialize the page
+		document.addEventListener('DOMContentLoaded', function () {
+			displayProducts(products);
+			updateResultsCount(products.length);
+			setupEventListeners();
+		});
+
+		// Setup event listeners
+		function setupEventListeners() {
+			// Category filter buttons
+			document.querySelectorAll('.category-btn').forEach(btn => {
+				btn.addEventListener('click', function () {
+					// Update active button
+					document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+					this.classList.add('active');
+
+					// Filter products
+					currentCategory = this.dataset.category;
+					filterProducts();
+				});
+			});
+
+			// Search input
+			const searchInput = document.getElementById('searchInput');
+			searchInput.addEventListener('input', function () {
+				currentSearch = this.value.toLowerCase().trim();
+				filterProducts();
+			});
+		}
+
+		// Filter products based on category and search
+		function filterProducts() {
+			filteredProducts = products.filter(product => {
+				const matchesCategory = currentCategory === 'all' || product.category === currentCategory;
+				const matchesSearch = currentSearch === '' ||
+					product.name.toLowerCase().includes(currentSearch) ||
+					product.description.toLowerCase().includes(currentSearch);
+
+				return matchesCategory && matchesSearch;
+			});
+
+			displayProducts(filteredProducts);
+			updateResultsCount(filteredProducts.length);
+		}
+
+		// Display products
+		function displayProducts(productsToShow) {
+			const container = document.getElementById('productsContainer');
+			const noProducts = document.getElementById('noProducts');
+
+			if (productsToShow.length === 0) {
+				container.innerHTML = '';
+				noProducts.style.display = 'block';
+				return;
+			}
+
+			noProducts.style.display = 'none';
+
+			container.innerHTML = productsToShow.map(product => `
+				<div class="col-12 col-md-6 col-lg-4 mb-4">
+					<div class="product-item" data-product-id="${product.id}">
+						<img src="${product.image}" class="img-fluid product-thumbnail" alt="${product.name}">
+						<div class="icon-cross" onclick="addToCart('${product.name}', ${product.price}, '${product.image}')">
+							<i class="fas fa-plus"></i>
+						</div>
+						<div class="product-info">
+							<div class="product-category">${product.category}</div>
+							<h3 class="product-title">${product.name}</h3>
+							<p class="product-description">${product.description}</p>
+							<strong class="product-price">$${product.price.toFixed(2)}</strong>
+						</div>
+					</div>
+				</div>
+			`).join('');
+		}
+
+		// Update results count
+		function updateResultsCount(count) {
+			const resultsCount = document.getElementById('resultsCount');
+			if (currentSearch || currentCategory !== 'all') {
+				resultsCount.textContent = `Showing ${count} products`;
+			} else {
+				resultsCount.textContent = `${count} products available`;
+			}
+		}
+
+		// Search on Enter key
+		document.getElementById('searchInput').addEventListener('keypress', function (e) {
+			if (e.key === 'Enter') {
+				e.preventDefault();
+			}
+		});
+
+		// Add to cart function
 		function addToCart(name, price, image) {
 			let cart = JSON.parse(localStorage.getItem('cart')) || [];
-			const idx = cart.findIndex(item => item.name === name);
-			if (idx > -1) {
-				cart[idx].quantity += 1;
+			const existingItem = cart.find(item => item.name === name);
+
+			if (existingItem) {
+				existingItem.quantity += 1;
 			} else {
 				cart.push({ name, price, image, quantity: 1 });
 			}
 			localStorage.setItem('cart', JSON.stringify(cart));
-			alert(`"${name}" ถูกเพิ่มเข้า cart แล้ว`);
-		}
+			alert(`"${name}" has been added to your cart!`);
 
-		// ดึงข้อมูลหนังสือจาก element
-		function getProductData(el) {
-			// หา wrapper ของสินค้า
-			const card = el.closest('.product-item');
-			const name = card.querySelector('.product-title').innerText.trim();
-			const price = parseFloat(
-				card.querySelector('.product-price').innerText.replace(/[^0-9.]/g, '')
-			);
-			const image = card.querySelector('.product-thumbnail').getAttribute('src');
-			return { name, price, image };
+			// Animation effect
+			event.target.closest('.icon-cross').style.transform = 'scale(1.2)';
+			setTimeout(() => {
+				event.target.closest('.icon-cross').style.transform = 'scale(1)';
+			}, 200);
 		}
-
-		// ติด listener ให้กับปุ่มเดิม (ปรับ selector ให้ตรงกับของคุณ)
-		document.querySelectorAll('.icon-cross, .increase').forEach(el => {
-			el.style.cursor = 'pointer';
-			el.addEventListener('click', function (e) {
-				e.preventDefault();
-				const { name, price, image } = getProductData(this);
-				addToCart(name, price, image);
-			});
-		});
 	</script>
 
 </body>
