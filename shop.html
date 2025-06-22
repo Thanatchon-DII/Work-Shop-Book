@@ -497,10 +497,24 @@
 			}
 		}
 
+		// Search on Enter key
+		document.getElementById('searchInput').addEventListener('keypress', function (e) {
+			if (e.key === 'Enter') {
+				e.preventDefault();
+			}
+		});
+
 		// Add to cart function
 		function addToCart(name, price, image) {
-			// Since we can't use localStorage in this environment, we'll just show an alert
-			// In a real application, you would save to localStorage or send to a server
+			let cart = JSON.parse(localStorage.getItem('cart')) || [];
+			const existingItem = cart.find(item => item.name === name);
+
+			if (existingItem) {
+				existingItem.quantity += 1;
+			} else {
+				cart.push({ name, price, image, quantity: 1 });
+			}
+			localStorage.setItem('cart', JSON.stringify(cart));
 			alert(`"${name}" has been added to your cart!`);
 
 			// Animation effect
@@ -509,13 +523,6 @@
 				event.target.closest('.icon-cross').style.transform = 'scale(1)';
 			}, 200);
 		}
-
-		// Search on Enter key
-		document.getElementById('searchInput').addEventListener('keypress', function (e) {
-			if (e.key === 'Enter') {
-				e.preventDefault();
-			}
-		});
 	</script>
 
 </body>
